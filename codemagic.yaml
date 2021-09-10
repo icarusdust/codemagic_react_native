@@ -51,3 +51,68 @@ workflows:
                 cd android && ./gradlew assembleRelease
         artifacts:
             - android/app/build/outputs/**/*.apk
+react-native-ios:
+        name: React Native iOS
+        max_build_duration: 120
+        instance_type: mac_mini
+        environment:
+            vars:
+                # Env vars for automatic iOS code signing
+                # See the following link for more details - https://docs.codemagic.io/code-signing-yaml/signing-ios/
+                XCODE_WORKSPACE: "ios/codemagic_react_native.xcworkspace" # <-- Put the name of your Xcode workspace here
+                XCODE_SCHEME: "codemagic_react_native" # <-- Put the name of your Xcode scheme here
+                # https://appstoreconnect.apple.com/access/api
+                APP_STORE_CONNECT_ISSUER_ID: Encrypted(Z0FBQUFBQmhKaDF2TDQ3WFN0c29rd2lVeXV5elhRS3htNDZjUU9ZZUt2bk5lZmFldnplSDNQd1FMaFluVWJ6djM2ZDlOa1ZDUkdnYXVVcmpDekJPdU94RDZzRDFxcVNqSVRqdnlJTUhuUVJvaVY3TjZieTJkVHdWUEcxQ0d5UFZLQ050emhIcjd6OGQ) # <-- Put your App Store Connect Issuer Id here
+                APP_STORE_CONNECT_KEY_IDENTIFIER: Encrypted(Z0FBQUFBQmhKa1BBcjBhOHVxcklHcVY1aEJLbDlCNzZJRUtYNGx5QXBBOURyQ0x1WVFFNXpvYmF5YXNabk5BYzFES1ZQTjhKWjlSWEt0bGFsak5YWS1ldDl4RFZJSG5Bb3c9PQ) # <-- Put your App Store Connect Key Identifier here
+                APP_STORE_CONNECT_PRIVATE_KEY: Encrypted(Z0FBQUFBQmhKa3Q1VDFqZV9JcXVzMWFXWWwySzdTMWVBczJ3V0lRWkRxbDdmRG5tUk9mRjk5X1YyQWh3UlE0VWpLRHlWQlhwRGoyR1VHZzliY1pFbThGdmdoU3RHMmRndFdNd3VwUnVvRjNSZ25UOS0tVm85Z0Vocnl3QXpKYkg0VTY2RU15QnVHRFM5ZFc0M290TVRSZ0Y1azFrcHdFSE1OUWlaRllmbGdobWVzVjNhcTFHY1RnekQxRkU1aVFzb2ZHMFZXaEdNdmYtbV9XU1BUalZ5SWlXUk1FalR4RVAwVTgyQUliVDJEcWNTLWEzdWxKcHJ1RjRsQmdnWjZPNXVFVXNtbTdMaW1STFk3YkRnWDFZNDhOTElEQlJvbG9yYS1aVWVBX2M4dXU5Y0V1dHFZczVTZWpyTk9raGVqSnZBb1JfNjUyWmx2MkNZUWpnSHdXLTNRVFBwdUlYYjh2WVpsY0pZX3k2Zm9wbmpiUkdmbWxKWUctcUNucnE0b0E0Ukt5RmRFdjhBZ3VKRnltNVFsZzFsQU1kYnhrTHo1cW9MR240UHdMeWNYZUVuX2hpdFhhQ1BFMD0) # <-- Put your App Store Connect Private Key here
+                CERTIFICATE_PRIVATE_KEY: Encrypted(Z0FBQUFBQmhKa3NKZXE0Z0JFTzRnS245RzFxNHFVQ2N6ZkhiVjI4UWZqOW44dkRVRy1uOWtUUkl6czVVLTkwYXZDZ21tdEh0NVU0NVdRMzdBTkY4NWtidU9KYTdXSm4yLWJ6cTZYVmRhLS1DMUNYeGJ3NHc4VjVnT2g5VVR4VURlUkRFdlZsY0V3b2RiOXJZOW52UEtac3JLbVFtY0ZiOTBPYUVQRE4yZXpQcTNkbEhuY2UtNHkteE5SX1V4dnNGYzVMdVBRNkU1NTAyZ2dRM2NCdW1CczhrbTd6N3FsamdwOHBKWUYtZDd6akFoTHRjQVBWTFRxbFhaUnJKWWtnVVRfSHVaWGduOHZNaHVpaDZTOVFfSnRSMm5qZ2xLNFFwY2d5ZnhPbHU0eTFfaERSWk5zUlVVcWZ3OHFxYlhfSGlTZThMSDIyS1djMTdmdWdraHlSbjZFWUoxbUd6Nm1oNHpwc1hYMDFNV0tuYndZc1dERzNJSmxmU0xncWdySFl0Ul84dG0taFZzSXU1S0JGcnBqUHNPQlJiemhMTkZWTUI0S0Y0OHNTR2MtVWJzNkNMT1FTU19jaU0zV19hcUF5ekJMb3Vxenl3cHBuRk9uZWtQbzZUbFhrSnNaUHM1ZzNjRENQdWRDQTgyOG9zUXg4U0NXNXNSQmduMjZkbnF3N0FNTmVsdGx2d1JiQjladFUxc3h6TjJLV1NJMGVPQ1NCSXRBX2xNVDB2UGZETUYxdUpQaWZUWWl3OHZiR1loQ0tFZHBrWTh4Y3pMMFhEaU9Qa21paEdSMGJnVUJRQVYzMl90cmNIeDB6UUcwdGFNOVlvVUJfeXU1SGJXZEtGeEdHTnVyTWM1b192N2FDRWNobU5BWGxpdmk5dDFYZ01NT1NqSnczbEJZc05LN2NCaHN3Q09McUY5T090OUVzZFdCaUhJdkxObVFqYnRXaE9LT090Sk54VDFUb0NvNW1ycE0tY2I0eURydzhCTThIUmxkRjFaeUlVbDJFbFJocy1PYU9yQ2Y0b1owVmJJZXpmdEFCcUQweXJWd2dtN3hXVzBWNGUzMjhJaFhBQ255UDAtUk5HUW5KTlN4Y2cwckdFRVV3UUMzLXhrcnp4R0NwSTFIRUwxeWw0Si1TX0FvZWZVNTFsc0U1RmhKaDhFc2MwWUVmQ3RtQXFfVEh6cXZlNnRvVXBfX1dzdHBRMVhQOGlJajNfYlN2eHhOcnNFT3A2cEsxRzhiRFF6eW9WZHYtcVdNTlg0M2lqSmdWZU83ZWNpb3ZVV2FUYk0ycUwydGZYai1iNkJOMDZveEU5SUJaNWZzaHM5WFBxR0diLXN3N1NiX0ZJZDlwM2FwVlNCaEV2eWx0bHVkamdQS3pZMzBzS0hxMlpMdjJZMEo5OWR3TU92Nk42VHdWQWN0UWR6U3Ezb0haTGZ3MnlxTlhxVEphTnltVm9vcExPMF9nZjhsTUVhTkZwY19Od0tLNDE2ZE94ZXlNbG5RWGYzWmpWZE9sWTk4a0dkYkM3OC00X0h4YkdDeXU4eWlIX1h6ZFM4Nm95aTU0a3BXQi1BUXNkNjJVdnhsMFZFODFya3dWZjkyNjRtdWRoUEZ5YlFfaVNiWDBXMWR5eldXRFpILTR0Nl9OWWpkM0VDNWJsVjcyM1Q5U0MwbVhya1RDY2JCYU95ZGszMmlHVHh5Vzd6MVUtZzRGQ2w0UTltSWx4MVVadE04dTg4VkFNWXEyV0Ixeldua0w5QTA1eFJtbF9IWmZFOXV1d0phTDNtSUpVOTRqN2N5cS16dWMtMHprc3pTVHlUeFhRS1d1MnhHTmFLazd2WmRZWXZQb0ZMNXBpYUwzVTd4a3RfYjZ4RUptUDc0eWNhN2Zrc25GQlZFcktVM3Z4TXNfcDlUdnFhYU5WQ3hKZU91OGNJQThRQkpEcWRKdm5ybENrUUE2ZzM5c2oxWWczQmNjSGRCR24wanJxWXBMTlJCZlZfRWJlcFdmVFFmaEZPVnY1ZkdjMmMxdjA1V3dadXNTZEZid0stank0N0d1SzB3ZTk1QnNyb3c3UUFlbF9oVVFDaWNab1Q3ZlRSVW9ER3hhc29ZU0ZkQXFWOGZKMlNITE1uNWpYM2Zxd0tmTkxiTFIxNWlxejFFc2lsNmxGTE1WeDlxM2E1bE9yWHlIZTE5WHhzYnlFWEpURVRrVHpoSUFaMzhsU3pmRW5vd2Z0SFZhWVJQNW5JR2dTNkpzYUlGU21LSmRzZ1RtV3prSVBYM2hOb3hkQWpWQ0NZcURnbnpZM3piS0Z1SnNONWgwdTZJdW93TXFPMGh5WHJPSGZzcHJxaWdob041Qk12Z3BuSXJKZGE5dE15VEN5MkJSaV9JSUIwRjRPbndNd3F0djVJcVFOODAtV2ZnVi1zYVAtSkk1NkdVVEUzS0t0aUozY1E2NlBaZkN5WjZlM3dUTFJnLXVjQlUzUWNPbjJSeE1rdjBZcG1hZnlmdEdmX2xRRmRweVd5ZTRQUkg3dUNSMG03VWk3ZWNPR002cDJQd2h1UE4zU0RVYmlzNTZJZjJYVVptaE5nYTJ1UXFwMXpyNVJfdmxtNG5idVphMkpEekptazJOUk04U0Vrb1NubUlCeW9ub3JfNHRlSmFwQlFNRFRGQVp5YjVWSXczY0JQSEw3Z0xCSkJKQllpRWJ3YldCY2poYXNUWFMwZUdzTF80c0t4dS1HaDl6QmxMTjB0clQ5Ump4Wmp4bjFaN0NSVGZ2VWdRR21mbDQxUDFyQnE4WDN4TzQ3Ry1LLWp1cE54QXJGRWYwZ2NuS2ZCVWZjejY2VmYyaTBxbUlGVmFQc2VQY00zUUpKN0lnZGh0azh3NlNxdkFwSWFxZUpqQ1lmdXN1YlBYb3dXejlSMGlPcC0tQUdDeTBEOEhzdDJzVEl2LWdGLWgtdnRLakxEV1lZN1RxSGpEd2lxbVY1QUdrZ3l6VDhFZHJ4d21NOTJYLUs2SkNhZUVUUkU5bWhhQkc3MW1pQTRLb2VtRFFhTThKTHptNEE5bXNFYW8zS0t5Ym0zNDdldE9mZHRuTGw4YnZNb3BzWDFzblBwdFhaZG5XekoteWdVWXN4TmJLLUVnTU5ySWFuQy0ybzl0WVFHdz09) # <-- Put your Certificate Private key here
+                BUNDLE_ID: "org.reactjs.native.example" # <-- Put your Bundle Id here e.g com.domain.myapp
+            node: latest
+            xcode: 12.5
+            cocoapods: default
+        triggering:
+            events:
+                - push
+                - tag
+                - pull_request
+            branch_patterns:
+                - pattern: develop
+                  include: true
+                  source: true
+        scripts:
+            - name: Install npm dependencies
+              script: |
+                npm install
+            - name: Install CocoaPods dependencies
+              script: |
+                cd ios && pod install
+            - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
+              script: |
+                keychain initialize
+            - name: Fetch signing files
+              script: |
+                # For information about Codemagic CLI commands visit: https://github.com/codemagic-ci-cd/cli-tools/blob/master/docs/app-store-connect/README.md
+                # For details about the --type paramater below - https://github.com/codemagic-ci-cd/cli-tools/blob/master/docs/app-store-connect/fetch-signing-files.md#--typeios_app_adhoc--ios_app_development--ios_app_inhouse--ios_app_store--mac_app_development--mac_app_direct--mac_app_store--mac_catalyst_app_development--mac_catalyst_app_direct--mac_catalyst_app_store--tvos_app_adhoc--tvos_app_development--tvos_app_inhouse--tvos_app_store
+                app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
+            - name: Use system default keychain
+              script: |
+                keychain add-certificates
+            - name: Increment build number
+              script: |
+                #!/bin/sh
+                set -e
+                set -x
+                cd $FCI_BUILD_DIR/ios
+                # agvtool new-version -all $(($BUILD_NUMBER + 1))
+                agvtool new-version -all $(($(app-store-connect get-latest-testflight-build-number "$APP_STORE_APP_ID") + 1))
+            - name: Set up code signing settings on Xcode project
+              script: |
+                xcode-project use-profiles --warn-only
+            - name: Build ipa for distribution
+              script: |
+                xcode-project build-ipa --workspace "$FCI_BUILD_DIR/ios/$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" 
+        artifacts:
+            - build/ios/ipa/*.ipa
+            - /tmp/xcodebuild_logs/*.log
+            - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+            - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
