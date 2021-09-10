@@ -51,7 +51,7 @@ workflows:
     #             cd android && ./gradlew assembleRelease
     #     artifacts:
     #         - android/app/build/outputs/**/*.apk
-react-native-ios:
+    react-native-ios:
         name: React Native iOS
         max_build_duration: 120
         instance_type: mac_mini
