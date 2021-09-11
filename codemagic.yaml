@@ -92,7 +92,7 @@ workflows:
                 keychain add-certificates
             - name: Set up code signing settings on Xcode project
               script: |
-                xcode-project use-profiles --warn-only
+                xcode-project use-profiles  --project=ios/codemagic_react_native.xcodeproj --warn-only
             - name: Build ipa for distribution
               script: |
                 xcode-project build-ipa --workspace "$FCI_BUILD_DIR/ios/$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" 
