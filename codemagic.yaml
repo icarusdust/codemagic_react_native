@@ -87,7 +87,7 @@ workflows:
             - /tmp/xcodebuild_logs/*.log
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
-        publshing:
+        publishing:
             app_store_connect:   # https://docs.codemagic.io/publishing-yaml/distribution              
                  api_key: $APP_STORE_CONNECT_PRIVATE_KEY   
                  key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
