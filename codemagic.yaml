@@ -44,7 +44,7 @@ workflows:
         environment:
             groups:
                - ios
-               - test
+               - certificate_creds 
 #             vars:
 #                 # Env vars for automatic iOS code signing
 #                 # See the following link for more details - https://docs.codemagic.io/code-signing-yaml/signing-ios/
