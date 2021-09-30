@@ -70,7 +70,6 @@ workflows:
             cocoapods: default
             groups:
                - ios
-               - certificate_creds 
         scripts:
             - name: Install npm dependencies
               script: |
