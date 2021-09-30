@@ -105,7 +105,7 @@ workflows:
             - name: Build ipa for Testing
               script: |
                 xcodebuild test -workspace "codemagic_react_native.xcworkspace" -scheme "dev" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro,OS=14.5" --only-testing "codemagic_react_nativeTest/TestClass/foo1"     
-         artifacts:
+        artifacts:
             - build/ios/ipa/*.ipa
             - /tmp/xcodebuild_logs/*.log
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
