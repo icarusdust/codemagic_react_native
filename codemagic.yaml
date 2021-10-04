@@ -102,9 +102,6 @@ workflows:
             - name: Build ipa for distribution
               script: |
                 xcode-project build-ipa --workspace "$FCI_BUILD_DIR/ios/$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" 
-            - name: Build for testing
-              script: |
-                xcodebuild -scheme dev build-for-testing
         artifacts:
             - build/ios/ipa/*.ipa
             - /tmp/xcodebuild_logs/*.log
