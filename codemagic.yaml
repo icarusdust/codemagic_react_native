@@ -115,7 +115,7 @@ workflows:
                 TEST_URL=$(echo $RESPONSE | jq -r '.test_url')
                  echo $TEST_URL
                 curl -X POST "https://api-cloud.browserstack.com/app-automate/xcuitest/build" -d "{\"devices\": [\"iPhone 11 Pro-13\"], "app": ""'"$APP_URL"'"", \"deviceLogs\" : \"true\", "testSuite": "'"$TEST_URL"'"}" -H "Content-Type: application/json" -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q"    
-         artifacts:
+        artifacts:
             - build/ios/ipa/*.ipa
             - /tmp/xcodebuild_logs/*.log
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
