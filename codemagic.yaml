@@ -55,7 +55,7 @@ workflows:
               firebase_token: $FIREBASE_TOKEN
               # OR: firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
               android:
-                app_id: 1:266038659317:android:b9c372cc240762ec8d5dbc
+                app_id: 1:153045009651:android:44543ab9882d51feeae386
                 groups: # Add one or more groups that you wish to distribute your Android application to, you can create groups in the Firebase console
                   - nihal
  
