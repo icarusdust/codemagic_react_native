@@ -93,7 +93,7 @@ workflows:
 #                 BUNDLE_ID: "org.reactjs.native.example" # <-- Put your Bundle Id here e.g com.domain.myapp
            
             node: latest
-            xcode: 12.5
+            xcode: 13.0
             cocoapods: default
             groups:
                - ios
