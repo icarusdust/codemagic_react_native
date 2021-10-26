@@ -24,7 +24,7 @@ workflows:
                 echo $ANDROID_FIREBASE_SECRET | base64 --decode > $FCI_BUILD_DIR/android/app/google-services.json
             - name: Testing
               script: cd android && ./gradlew test
-              test_report: app/build/test-results/**/*.xml
+              test_report: android/app/build/test-results/**/*.xml
             - name: Set up keystore
               script: |
                     echo $CM_KEYSTORE | base64 --decode > /tmp/keystore.keystore
@@ -53,7 +53,7 @@ workflows:
                  curl -X POST "https://api-cloud.browserstack.com/app-automate/espresso/build" -d '{"devices": ["Google Pixel 3-9.0"], "app": "'"$APP_URL"'", "deviceLogs" : true, "testSuite": "'"$TEST_URL"'"}' -H "Content-Type: application/json" -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q"    
         artifacts:
             - android/app/build/outputs/**/*.apk
-            - app/build/test-results/**/*.xml
+            - android/app/build/test-results/**/*.xml
 #         publishing:
 #             firebase:
 #               firebase_token: $FIREBASE_TOKEN
