@@ -17,6 +17,10 @@ target 'codemagic_react_native' do
     inherit! :complete
     # Pods for testing
   end
+  
+  target 'codemagic_react_native' do
+     pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '7.10.1'
+  end
 
   # Enables Flipper.
   #
