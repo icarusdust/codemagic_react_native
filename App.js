@@ -26,6 +26,24 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+import Sentry
+
+func application(_ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    SentrySDK.start { options in
+        options.dsn = "https://02ec60fdf69d4c0487a935fafad3a19a@o1165433.ingest.sentry.io/6255141"
+        options.debug = true // Enabled debug when first installing is always helpful
+
+        // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+        // We recommend adjusting this value in production.
+        options.tracesSampleRate = 1.0
+    }
+
+    return true
+}
+
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
