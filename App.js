@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import * as Sentry from "@sentry/react-native";
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -27,22 +28,28 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 
-import Sentry
+// import Sentry
 
-func application(_ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+// func application(_ application: UIApplication,
+//     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-    SentrySDK.start { options in
-        options.dsn = "https://02ec60fdf69d4c0487a935fafad3a19a@o1165433.ingest.sentry.io/6255141"
-        options.debug = true // Enabled debug when first installing is always helpful
+//     SentrySDK.start { options in
+//         options.dsn = "https://02ec60fdf69d4c0487a935fafad3a19a@o1165433.ingest.sentry.io/6255141"
+//         options.debug = true // Enabled debug when first installing is always helpful
 
-        // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-        // We recommend adjusting this value in production.
-        options.tracesSampleRate = 1.0
-    }
+//         // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+//         // We recommend adjusting this value in production.
+//         options.tracesSampleRate = 1.0
+//     }
 
-    return true
-}
+//     return true
+// }
+Sentry.init({
+  dsn: "https://02ec60fdf69d4c0487a935fafad3a19a@o1165433.ingest.sentry.io/6255141",
+  // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+  // We recommend adjusting this value in production.
+  tracesSampleRate: 1.0,
+});
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
