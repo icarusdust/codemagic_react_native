@@ -108,7 +108,7 @@ workflows:
                 npm install
                 npm install --save @sentry/react-native
                 npm install -g @sentry/wizard 
-                sentry-wizard --quite
+                sentry-wizard --i env: SENTRY_WIZARD_INTEGRATION [choices: "reactNative"]
                 
             - name: Install CocoaPods dependencies
               script: |
