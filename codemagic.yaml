@@ -156,7 +156,7 @@ workflows:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         publishing:
-           Scripts:
+           scripts:
                - name: Sentry
                  script: |
                    sentry-cli --auth-token 13beeb2899ca4e80b545cb4a8dae56b889a19cacf6834b6f8c5540987aedd4f5 upload-dif --org nevercode-24 --project $CM_BUILD_DIR/build/ios/archive/codemagic_react_native.xcarchive
