@@ -76,6 +76,7 @@ const Section = ({children, title}): Node => {
     </View>
   );
 };
+throw new Error("My first Sentry error!");
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
