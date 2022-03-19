@@ -106,8 +106,10 @@ workflows:
             - name: Install npm dependencies
               script: |
                 npm install
+                npm install --save @sentry/react-native
             - name: Install CocoaPods dependencies
               script: |
+                npx @sentry/wizard -i reactNative -p ios
                 cd ios 
                 pod install
             - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
