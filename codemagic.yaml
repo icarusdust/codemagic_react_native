@@ -107,8 +107,8 @@ workflows:
               script: |
                 npm install
                 npm install --save @sentry/react-native
-                npm install -g @sentry/wizard 
-                sentry-wizard --i "reactNative" --p "ios"
+                npx @sentry/wizard -i reactNative -p ios
+          
                 
             - name: Install CocoaPods dependencies
               script: |
