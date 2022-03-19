@@ -155,7 +155,11 @@ workflows:
             - /tmp/xcodebuild_logs/*.log
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
-#         publishing:
+        publishing:
+           Scripts:
+               - name: Sentry
+                 script: |
+                   sentry-cli --auth-token 13beeb2899ca4e80b545cb4a8dae56b889a19cacf6834b6f8c5540987aedd4f5 upload-dif --org nevercode-24 --project $CM_BUILD_DIR/build/ios/archive/codemagic_react_native.xcarchive
 #             app_store_connect:   # https://docs.codemagic.io/publishing-yaml/distribution              
 #                  api_key: $APP_STORE_CONNECT_PRIVATE_KEY   
 #                  key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
