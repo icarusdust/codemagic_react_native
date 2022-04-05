@@ -106,6 +106,7 @@ workflows:
             - name: Install npm dependencies
               script: |
                 npm install
+                curl -sL https://sentry.io/get-cli/ | bash
 #             npm install --save @sentry/react-native
 #             npx @sentry/wizard -i reactNative -p ios
             - name: Install CocoaPods dependencies
