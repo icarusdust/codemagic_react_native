@@ -161,7 +161,7 @@ workflows:
                - name: Sentry
                  script: | 
                      echo "Find build artifacts"
-                     dsymPath=$(find $CM_BUILD_DIR/build/ios/archive/codemagic_react_native.xcarchive/dSYMs -name "*.dSYM" | head -1)
+                     dsymPath=$(find $CM_BUILD_DIR/build/ios/xcarchive/codemagic_react_native_hptyyaus.xcarchive/dSYMs -name "*.dSYM" | head -1)
                      if [[ -z ${dsymPath} ]]
                      then
                        echo "No debug symbols were found, skip publishing to Firebase Crashlytics"
