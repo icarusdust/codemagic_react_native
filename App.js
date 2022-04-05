@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import * as Sentry from "@sentry/react-native";
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -44,12 +43,12 @@ import {
 
 //     return true
 // }
-Sentry.init({
-  dsn: "https://02ec60fdf69d4c0487a935fafad3a19a@o1165433.ingest.sentry.io/6255141",
-  // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-  // We recommend adjusting this value in production.
-  tracesSampleRate: 1.0,
-});
+// Sentry.init({
+//   dsn: "https://02ec60fdf69d4c0487a935fafad3a19a@o1165433.ingest.sentry.io/6255141",
+//   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+//   // We recommend adjusting this value in production.
+//   tracesSampleRate: 1.0,
+// });
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -76,7 +75,7 @@ const Section = ({children, title}): Node => {
     </View>
   );
 };
-throw new Error("My first Sentry error!");
+
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
