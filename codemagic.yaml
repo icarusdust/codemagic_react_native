@@ -16,7 +16,7 @@ workflows:
             node: 15.13.0
         cache:
            cache_paths:
-               - $CM_BUILD_DIR/app/node_modules
+               - $FLUTTER_ROOT/.pub-cache	
         scripts:
             - name: Install npm dependencies
               script: |
