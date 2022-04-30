@@ -13,7 +13,6 @@ workflows:
                 CM_KEYSTORE_PATH: /tmp/keystore.keystore
                 CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmcwbDcweUxYUmxxaTVEeFhxY0hTQWVteUlTMWhiNzVpazlERUFNR1g5akMxLTA4NjVKaXJ2dEdVdDhDRVV5WlNqa25kTW1raDJuYlRiT2o2YW1qTmpMWDc4akE9PQ==) # <-- Put your encrypted keystore alias username here 
                 PACKAGE_NAME: "com.codemagic_react_native"
-                TEST_GROUP: 'nihal'
             node: 15.13.0
         cache:
            cache_paths:
@@ -65,7 +64,7 @@ workflows:
               android:
                 app_id: 1:834356919599:android:1de876ecdeb1039bbb75da
                 groups: # Add one or more groups that you wish to distribute your Android application to, you can create groups in the Firebase console
-                  - $TEST_GROUP
+                  - nihal
  
           
           
