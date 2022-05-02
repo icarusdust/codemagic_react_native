@@ -53,7 +53,7 @@ workflows:
               script: |
                 APP_URL=$(curl -u "nihal@nevercode.io:93zqy94twt7325vhkg49cbkf" https://device.pcloudy.com/api/access | jq -r '.[].token') 
                
-                curl -X POST -F "file=@/home/user/Downloads/pCloudy_Appium_Demo.apk" -F "source_type=raw" -F "token=$APP_URL" -F "filter=all" https://device.pcloudy.com/api/upload_file
+                curl -X POST -F "file=@android/app/build/outputs/apk/release/app-release.apk" -F "source_type=raw" -F "token=$APP_URL" -F "filter=all" https://device.pcloudy.com/api/upload_file
 
 
 #             - name: BrowserStack upload
