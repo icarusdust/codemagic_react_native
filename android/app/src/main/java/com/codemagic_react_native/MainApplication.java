@@ -12,23 +12,23 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
-  DesiredCapabilities capabilities = new DesiredCapabilities();
-  capabilities.setCapability("pCloudy_Username", "nihal@nevercode.io");
-  capabilities.setCapability("pCloudy_ApiKey", "93zqy94twt7325vhkg49cbkf");
-  capabilities.setCapability("pCloudy_DurationInMinutes", 20);
-  capabilities.setCapability("newCommandTimeout", 600);
-  capabilities.setCapability("launchTimeout", 90000);
-  capabilities.setCapability("pCloudy_DeviceFullName", "GOOGLE_Pixel2_Android_11.0.0_c2579");
-  capabilities.setCapability("platformVersion", "11.0.0");
-  capabilities.setCapability("platformName", "Android");
-  capabilities.setCapability("automationName", "uiautomator2");
-  capabilities.setCapability("appPackage", "testing");
-  capabilities.setCapability("appActivity", "gaming");
-  capabilities.setCapability("pCloudy_WildNet", "false");
-  capabilities.setCapability("pCloudy_EnableVideo", "false");
-  capabilities.setCapability("pCloudy_EnablePerformanceData", "false");
-  capabilities.setCapability("pCloudy_EnableDeviceLogs", "false");
-  AndroidDriver<WebElement> driver = new AndroidDriver<WebElement>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+//   DesiredCapabilities capabilities = new DesiredCapabilities();
+//   capabilities.setCapability("pCloudy_Username", "nihal@nevercode.io");
+//   capabilities.setCapability("pCloudy_ApiKey", "93zqy94twt7325vhkg49cbkf");
+//   capabilities.setCapability("pCloudy_DurationInMinutes", 20);
+//   capabilities.setCapability("newCommandTimeout", 600);
+//   capabilities.setCapability("launchTimeout", 90000);
+//   capabilities.setCapability("pCloudy_DeviceFullName", "GOOGLE_Pixel2_Android_11.0.0_c2579");
+//   capabilities.setCapability("platformVersion", "11.0.0");
+//   capabilities.setCapability("platformName", "Android");
+//   capabilities.setCapability("automationName", "uiautomator2");
+//   capabilities.setCapability("appPackage", "testing");
+//   capabilities.setCapability("appActivity", "gaming");
+//   capabilities.setCapability("pCloudy_WildNet", "false");
+//   capabilities.setCapability("pCloudy_EnableVideo", "false");
+//   capabilities.setCapability("pCloudy_EnablePerformanceData", "false");
+//   capabilities.setCapability("pCloudy_EnableDeviceLogs", "false");
+//   AndroidDriver<WebElement> driver = new AndroidDriver<WebElement>(new URL("https://device.pcloudy.com/appiumcloud/wd/hub"), capabilities);
 
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
