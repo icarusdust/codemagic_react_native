@@ -21,8 +21,8 @@ workflows:
             - name: Install npm dependencies
               script: |
                 npm install
-                npm i @react-native-firebase/app
-                npm i @react-native-firebase/messaging
+#            npm i @react-native-firebase/app
+#            npm i @react-native-firebase/messaging
             - name: Set Android SDK location
               script: |
                 echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/android/local.properties"
@@ -54,6 +54,7 @@ workflows:
                 APP_URL=$(curl -u "nihal@nevercode.io:93zqy94twt7325vhkg49cbkf" https://device.pcloudy.com/api/access | jq -r '.[].token') 
                
                 curl -X POST -F "file=@android/app/build/outputs/apk/release/app-release.apk" -F "source_type=raw" -F "token=$APP_URL" -F "filter=all" https://device.pcloudy.com/api/upload_file
+                curl -X POST -F "file=@android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk" -F "source_type=raw" -F "token=$APP_URL" -F "filter=all" https://device.pcloudy.com/api/upload_file
 
 
 #             - name: BrowserStack upload
