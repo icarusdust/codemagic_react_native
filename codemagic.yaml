@@ -122,9 +122,6 @@ workflows:
               script: |
                 npm install
                 npm install --save @sentry/react-native
-                echo $CM_PULL_REQUEST
-              when: 
-                condition: false
 #             npm install --save @sentry/react-native
 #             npx @sentry/wizard -i reactNative -p ios
             - name: Install CocoaPods dependencies
