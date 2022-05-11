@@ -114,7 +114,7 @@ workflows:
            
             node: 14.16.1
             xcode: 13.0
-            cocoapods: latest
+            cocoapods: 1.11.3 
             groups:
                - ios
         scripts:
