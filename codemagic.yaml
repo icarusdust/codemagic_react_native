@@ -51,9 +51,9 @@ workflows:
                 # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks=alpha) + 1))             
                 export NEW_BUILD_NUMBER=$(($(firebase-app-distribution get-latest-build-number --package-name "$PACKAGE_NAME") + 1))
                 cd android && ./gradlew assembleRelease
-            - name: Text
-              script: | 
-                 cp my_file.txt $CM_EXPORT_DIR/my_file.txt
+#             - name: Text
+#               script: | 
+#                  cp my_file.txt $CM_EXPORT_DIR/my_file.txt
 #             - name: Pcloudy
 #               script: |
 #                 APP_URL=$(curl -u "nihal@nevercode.io:93zqy94twt7325vhkg49cbkf" https://device.pcloudy.com/api/access | jq -r '.[].token') 
