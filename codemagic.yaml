@@ -20,7 +20,6 @@ workflows:
         scripts:
             - name: Install npm dependencies
               script: |
-                npm adduser
                 npm install
 #            npm i @react-native-firebase/app
 #            npm i @react-native-firebase/messaging
@@ -40,9 +39,11 @@ workflows:
 #            keyAlias=$CM_KEY_ALIAS_USERNAME
 #            storeFile=/tmp/keystore.keystore
 #            EOF 
-            - name: Build Android Test release
-              script: |
-                cd android && ./gradlew assembleAndroidTest
+           
+#             - name: Build Android Test release
+#               script: |
+#                 cd android && ./gradlew assembleAndroidTest
+                
             - name: Build Android release
               script: |
                 # Set environment variable so it can be used to increment build number in android/app/build.gradle
@@ -50,12 +51,15 @@ workflows:
                 # export NEW_BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks=alpha) + 1))             
                 export NEW_BUILD_NUMBER=$(($(firebase-app-distribution get-latest-build-number --package-name "$PACKAGE_NAME") + 1))
                 cd android && ./gradlew assembleRelease
-            - name: Pcloudy
-              script: |
-                APP_URL=$(curl -u "nihal@nevercode.io:93zqy94twt7325vhkg49cbkf" https://device.pcloudy.com/api/access | jq -r '.[].token') 
+            - name: Text
+              script: | 
+                 cp my_file.txt $CM_EXPORT_DIR/my_file.txt
+#             - name: Pcloudy
+#               script: |
+#                 APP_URL=$(curl -u "nihal@nevercode.io:93zqy94twt7325vhkg49cbkf" https://device.pcloudy.com/api/access | jq -r '.[].token') 
                
-                curl -X POST -F "file=@android/app/build/outputs/apk/release/app-release.apk" -F "source_type=raw" -F "token=$APP_URL" -F "filter=all" https://device.pcloudy.com/api/upload_file
-                curl -X POST -F "file=@android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk" -F "source_type=raw" -F "token=$APP_URL" -F "filter=all" https://device.pcloudy.com/api/upload_file
+#                 curl -X POST -F "file=@android/app/build/outputs/apk/release/app-release.apk" -F "source_type=raw" -F "token=$APP_URL" -F "filter=all" https://device.pcloudy.com/api/upload_file
+#                 curl -X POST -F "file=@android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk" -F "source_type=raw" -F "token=$APP_URL" -F "filter=all" https://device.pcloudy.com/api/upload_file
 
 
 #             - name: BrowserStack upload
@@ -70,6 +74,7 @@ workflows:
         artifacts:
             - android/app/build/outputs/**/*.apk
             - android/app/build/test-results/**/*.xml
+            - android/app/build/**/**/*.txt
 # #         publishing:
 # #             firebase:
 # #               firebase_token: $FIREBASE_TOKEN
