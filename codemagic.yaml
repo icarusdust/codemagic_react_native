@@ -158,7 +158,7 @@ workflows:
             - name: Set up code signing settings on Xcode project
               script: |
                 xcode-project use-profiles  --project="ios/codemagic_react_native.xcodeproj"
-            - name: Test:
+            - name: Test
               script: |
                 xcode-project run-tests \
                     -workspace codemagic_react_native.xcworkspace \
