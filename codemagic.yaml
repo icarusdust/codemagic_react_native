@@ -120,7 +120,7 @@ workflows:
                 XCODE_PROJECT: "ios/codemagic_react_native.xcodeproj"
            
             node: 10.12.0
-            xcode: 13.0
+            xcode: latest
             cocoapods: 1.11.3 
             ruby: 2.5.2
             groups:
