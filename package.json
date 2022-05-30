@@ -1,6 +1,6 @@
 {
   "name": "codemagic_react_native",
-  "version": "0.0.1",
+  "version": "4.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
