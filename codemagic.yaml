@@ -109,7 +109,7 @@ workflows:
             vars:
 #                 # Env vars for automatic iOS code signing
 #                 # See the following link for more details - https://docs.codemagic.io/code-signing-yaml/signing-ios/
-                XCODE_WORKSPACE: "ios/codemagic_react_native.xcworkspace" # <-- Put the name of your Xcode workspace here
+                XCODE_WORKSPACE: "codemagic_react_native.xcworkspace" # <-- Put the name of your Xcode workspace here
 #                 XCODE_SCHEME: "codemagic_react_native" # <-- Put the name of your Xcode scheme here
 #                 # https://appstoreconnect.apple.com/access/api
 #                 APP_STORE_CONNECT_ISSUER_ID: Encrypted(Z0FBQUFBQmc3Q0UxYnN0YS1PYjdkblFfemppQkdfR2RTV1FiclpHRVVsdUcwb1R6dkFyRnRWU1RLbFc4Z1BIUURwQUxfZHBiVGpkalAyUzI3OFpqWjdZbi1HUGtzLVZGWlh3dk5tRG1tQ1VMeTNwSXFKT0ZWOVY2amNvdDRLTEQ0Nmh2UU9NM19xbEI=) # <-- Put your App Store Connect Issuer Id here
