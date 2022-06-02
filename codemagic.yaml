@@ -119,7 +119,7 @@ workflows:
                 BUNDLE_ID: dust.nolan.com # <-- Put your Bundle Id here e.g com.domain.myapp
                 XCODE_PROJECT: "ios/codemagic_react_native.xcodeproj"
            
-            node: latest
+            node: 14.8.1
             xcode: latest
             cocoapods: 1.11.3 
             groups:
