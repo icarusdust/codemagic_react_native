@@ -44,6 +44,7 @@ workflows:
             - name: Build Android Test release
               script: |
                 cd android && ./gradlew assembleAndroidTest
+              test_report: android/app/build/test-results/**/*.xml
                 
             - name: Build Android release
               script: |
