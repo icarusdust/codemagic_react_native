@@ -41,10 +41,15 @@ workflows:
 #            storeFile=/tmp/keystore.keystore
 #            EOF 
            
-            - name: Build Android Test release
-              script: |
-                cd android && ./gradlew assembleAndroidTest
-              test_report: android/app/build/test-results/**/*.xml
+#             - name: Build Android Test release
+#               script: |
+#                 cd android && ./gradlew assembleAndroidTest
+#               test_report: android/app/build/test-results/**/*.xml
+
+            - name: Test
+              script: ./gradlew test
+              test_report: app/build/test-results/**/*.xml
+
                 
             - name: Build Android release
               script: |
@@ -75,7 +80,7 @@ workflows:
 #                  curl -X POST "https://api-cloud.browserstack.com/app-automate/espresso/build" -d '{"devices": ["Google Pixel 3-9.0"], "app": "'"$APP_URL"'", "deviceLogs" : true, "testSuite": "'"$TEST_URL"'"}' -H "Content-Type: application/json" -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q"    
         artifacts:
             - android/app/build/outputs/**/*.apk
-            - android/app/build/test-results/**/*.xml
+            - app/build/test-results/**/*.xml
             - android/app/build/**/**/*.txt
 # # #         publishing:
 # # #             firebase:
