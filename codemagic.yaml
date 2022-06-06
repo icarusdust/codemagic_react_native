@@ -46,10 +46,13 @@ workflows:
 #                 cd android && ./gradlew assembleAndroidTest
 #               test_report: android/app/build/test-results/**/*.xml
 
-            - name: Test
-              script: cd android && ./gradlew test
-              test_report: app/build/test-results/**/*.xml
+#             - name: Test
+#               script: cd android && ./gradlew test
+#               test_report: app/build/test-results/**/*.xml
 
+            - name: Jest Katalon
+              script: | 
+                  npx jest
                 
             - name: Build Android release
               script: |
