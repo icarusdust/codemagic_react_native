@@ -50,9 +50,9 @@ workflows:
 #               script: cd android && ./gradlew test
 #               test_report: app/build/test-results/**/*.xml
 
-            - name: Jest Katalon
-              script: | 
-                  npx jest
+#             - name: Jest Katalon
+#               script: | 
+#                   npx jest
                 
             - name: Build Android release
               script: |
