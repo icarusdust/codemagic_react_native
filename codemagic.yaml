@@ -21,7 +21,7 @@ workflows:
             - name: Install npm dependencies
               script: |
                 npm install
-                echo $UNITY_HOME
+                npm i -s @katalon/testops-jest
 #            npm i @react-native-firebase/app
 #            npm i @react-native-firebase/messaging
             - name: Set Android SDK location
