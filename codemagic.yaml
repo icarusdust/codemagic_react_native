@@ -13,7 +13,7 @@ workflows:
                 CM_KEYSTORE_PATH: /tmp/keystore.keystore
                 CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmcwbDcweUxYUmxxaTVEeFhxY0hTQWVteUlTMWhiNzVpazlERUFNR1g5akMxLTA4NjVKaXJ2dEdVdDhDRVV5WlNqa25kTW1raDJuYlRiT2o2YW1qTmpMWDc4akE9PQ==) # <-- Put your encrypted keystore alias username here 
                 PACKAGE_NAME: "com.codemagic_react_native"
-            node: 14.8.1
+            node: 16.11.1
             xcode: latest
 #         cache:
 #            cache_paths:
