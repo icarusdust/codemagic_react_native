@@ -21,7 +21,7 @@ workflows:
         scripts:
             - name: Install npm dependencies
               script: |
-                yarn install
+                npm install
 #            npm i @react-native-firebase/app
 #            npm i @react-native-firebase/messaging
             - name: Set Android SDK location
