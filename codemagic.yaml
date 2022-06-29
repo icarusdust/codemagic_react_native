@@ -15,9 +15,9 @@ workflows:
                 PACKAGE_NAME: "com.codemagic_react_native"
             node: 16.11.1
             xcode: latest
-#         cache:
-#            cache_paths:
-#                - $FLUTTER_ROOT/.pub-cache
+        cache:
+           cache_paths:
+               - $CM_BUILD_DIR/node_modules
         scripts:
             - name: Install npm dependencies
               script: |
