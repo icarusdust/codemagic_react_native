@@ -29,8 +29,8 @@ workflows:
         scripts:
             - name: Install npm dependencies
               script: |
-               npm install
-               npm install --package-lock-only
+                npm install latest-version
+                npm install --package-lock-only
 #              yarn install
 #            npm i @react-native-firebase/app
 #            npm i @react-native-firebase/messaging
