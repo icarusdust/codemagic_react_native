@@ -29,7 +29,7 @@ workflows:
         scripts:
             - name: Install npm dependencies
               script: |
-                npm install latest-version
+                npm -g install npm@7.19.1
                 npm install --package-lock-only
 #              yarn install
 #            npm i @react-native-firebase/app
