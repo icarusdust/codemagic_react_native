@@ -13,7 +13,7 @@ workflows:
                 CM_KEYSTORE_PATH: /tmp/keystore.keystore
                 CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmcwbDcweUxYUmxxaTVEeFhxY0hTQWVteUlTMWhiNzVpazlERUFNR1g5akMxLTA4NjVKaXJ2dEdVdDhDRVV5WlNqa25kTW1raDJuYlRiT2o2YW1qTmpMWDc4akE9PQ==) # <-- Put your encrypted keystore alias username here 
                 PACKAGE_NAME: "com.codemagic_react_native"
-            node: 16.11.1
+            node: latest
             xcode: latest
 #         triggering:
 #            events:
@@ -30,6 +30,7 @@ workflows:
             - name: Install npm dependencies
               script: |
                npm install
+               npm install --package-lock-only
 #              yarn install
 #            npm i @react-native-firebase/app
 #            npm i @react-native-firebase/messaging
