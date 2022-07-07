@@ -62,6 +62,10 @@ workflows:
 #             - name: Jest Katalon
 #               script: | 
 #                   npx jest
+            - name: Build Android Test release
+              script: |
+                cd android && ./gradlew assembleAndroidTest
+
                 
             - name: Build Android release
               script: |
