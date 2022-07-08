@@ -86,14 +86,15 @@ workflows:
 
 
             - name: BrowserStack upload
-              curl -H "Content-Type: application/json" -d '{"token":"$APP_URL","duration":"10","platform":"android","devices":[120,256],"session":"Sample session","overwrite_location":"true"}' https://device.pcloudy.com/api/appium/init
- APP_URL=$(curl -u "nihal@nevercode.io:93zqy94twt7325vhkg49cbkf" https://device.pcloudy.com/api/access | jq -r '.token') 
+#               curl -H "Content-Type: application/json" -d '{"token":"$APP_URL","duration":"10","platform":"android","devices":[120,256],"session":"Sample session","overwrite_location":"true"}' https://device.pcloudy.com/api/appium/init APP_URL=$(curl -u "nihal@nevercode.io:93zqy94twt7325vhkg49cbkf" https://device.pcloudy.com/api/access | jq -r '.token') 
               script: |      
-                 APP_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@android/app/build/outputs/apk/release/app-release.apk" | jq -r '.app_url') 
-                 echo $APP_URL
-                 TEST_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/espresso/test-suite" -F "file=@android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk" | jq -r '.test_url')
-                 echo $TEST_URL
-                 curl -X POST "https://api-cloud.browserstack.com/app-automate/espresso/build" -d '{"devices": ["Google Pixel 3-9.0"], "app": "'"$APP_URL"'", "deviceLogs" : true, "testSuite": "'"$TEST_URL"'"}' -H "Content-Type: application/json" -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q"    
+                  curl -u "nihal@nevercode.io:93zqy94twt7325vhkg49cbkf" -X POST "https://api-cloud.browserstack.com/app-live/upload" -F "file=@android/app/build/outputs/**/*.apk"
+
+#                  APP_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@android/app/build/outputs/apk/release/app-release.apk" | jq -r '.app_url') 
+#                  echo $APP_URL
+#                  TEST_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/espresso/test-suite" -F "file=@android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk" | jq -r '.test_url')
+#                  echo $TEST_URL
+#                  curl -X POST "https://api-cloud.browserstack.com/app-automate/espresso/build" -d '{"devices": ["Google Pixel 3-9.0"], "app": "'"$APP_URL"'", "deviceLogs" : true, "testSuite": "'"$TEST_URL"'"}' -H "Content-Type: application/json" -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q"    
         artifacts:
             - android/app/build/outputs/**/*.apk
             - app/build/test-results/**/*.xml
