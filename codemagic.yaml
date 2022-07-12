@@ -17,9 +17,7 @@ workflows:
             xcode: 13.4.0
         triggering:
            events:
-             - pull_request
              - tag
-             - push
            tag_patterns:
              - pattern: '*'
                include: true
