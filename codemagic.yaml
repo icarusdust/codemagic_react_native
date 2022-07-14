@@ -17,9 +17,9 @@ workflows:
             xcode: latest
         triggering:
            events:
-             - pull_request
+             - tag
            branch_patterns:
-             - pattern: 'develop'
+             - pattern: 'master'
                include: true
         cache:
            cache_paths:
