@@ -14,11 +14,11 @@ workflows:
                 CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmcwbDcweUxYUmxxaTVEeFhxY0hTQWVteUlTMWhiNzVpazlERUFNR1g5akMxLTA4NjVKaXJ2dEdVdDhDRVV5WlNqa25kTW1raDJuYlRiT2o2YW1qTmpMWDc4akE9PQ==) # <-- Put your encrypted keystore alias username here 
                 PACKAGE_NAME: "com.codemagic_react_native"
             node: v16.15.1
-            xcode: 13.4.0
+            xcode: latest
         triggering:
            events:
              - tag
-           tag_patterns:
+           branch_patterns:
              - pattern: '*'
                include: true
         cache:
