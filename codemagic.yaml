@@ -23,7 +23,7 @@ workflows:
              - pattern: '*'
                include: true
            tag_patterns:
-             - pattern: 'v2.*'
+             - pattern: 'v4.*'
         cache:
            cache_paths:
                - $CM_BUILD_DIR/node_modules
