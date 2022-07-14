@@ -19,7 +19,7 @@ workflows:
            events:
              - tag
            branch_patterns:
-             - pattern: 'master'
+             - pattern: 'develop'
                include: true
         cache:
            cache_paths:
