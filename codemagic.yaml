@@ -17,10 +17,13 @@ workflows:
             xcode: latest
         triggering:
            events:
+             - pull_request
              - tag
            branch_patterns:
              - pattern: '*'
                include: true
+           tag_patterns:
+             - pattern: 'v2.*'
         cache:
            cache_paths:
                - $CM_BUILD_DIR/node_modules
