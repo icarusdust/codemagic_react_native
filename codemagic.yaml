@@ -18,13 +18,12 @@ workflows:
             npm: 6.14.14
         triggering:
            events:
-             - pull_request
-             - tag
+             - push
            branch_patterns:
-             - pattern: '*'
+             - pattern: master
                include: true
-           tag_patterns:
-             - pattern: 'v4.*'
+#            tag_patterns:
+#              - pattern: 'v4.*'
         cache:
            cache_paths:
                - $CM_BUILD_DIR/node_modules
